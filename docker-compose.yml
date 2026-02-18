@@ -1,0 +1,38 @@
+services:
+  surfy-app:
+    image: node:24
+    container_name: surfy-app
+    working_dir: /usr/src/app
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - "3000:3000"
+    command: sh -c "npm install && npm run dev"
+    environment:
+      NODE_ENV: development
+    networks:
+      - surfy-net
+
+  surfy-db:
+    image: mysql:8.4
+    container_name: surfy-db
+    restart: on-failure
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: surfy
+      MYSQL_USER: dev
+      MYSQL_PASSWORD: dev
+    ports:
+      - "3326:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - surfy-net
+
+volumes:
+  mysql-data:
+
+networks:
+  surfy-net:
+    driver: bridge
