@@ -93,3 +93,35 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+.logo {
+  @apply text-2xl font-bold;
+}
+
+.headerContent {
+  @apply flex flex-row items-center justify-between p-5 bg-zinc-950;
+}
+
+.homeWelcome {
+  @apply p-5;
+
+  h2 {
+    @apply text-xl font-bold;
+  }
+}
+
+.homeSearch {
+  @apply flex items-center gap-2 mt-6;
+
+  Input {
+    @apply bg-zinc-900 border-zinc-700;
+
+    border-radius: 8px;
+  }
+
+  Button {
+    @apply bg-cyan-600;
+
+    border-radius: 8px;
+  }
+}
