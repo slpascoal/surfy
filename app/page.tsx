@@ -1,11 +1,13 @@
 import Header from "@/components/header";
 import Main from "../components/main";
+import Footer from "@/components/footer";
 
 export default function Home() {
   return (
     <div className="text-zinc-50 bg-zinc-950">
       <Header />
       <Main />
+      <Footer />
     </div>
   );
 }

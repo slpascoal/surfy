@@ -1,0 +1,15 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+.footerContainer {
+    @apply px-5 py-6 bg-neutral-950 text-center;
+
+    p {
+        @apply text-sm text-neutral-400;
+
+        span {
+            @apply font-bold;
+        }
+    }
+}

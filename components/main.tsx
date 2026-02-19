@@ -11,6 +11,12 @@ import CompaniesCard from "./companiesCard";
 
 export default async function Main() {
   const companies = await prisma.companies.findMany({});
+  const popularCompanies = await prisma.companies.findMany({
+    orderBy: {
+      name: "desc",
+    },
+    take: 5,
+  });
 
   return (
     <main>
@@ -62,6 +68,13 @@ export default async function Main() {
         <div className="homeCompaniesContainer">
           {companies.map((company) => (
             <CompaniesCard key={company.id} company={company} />
+          ))}
+        </div>
+
+        <h3 className="homeSubTitles">Populares</h3>
+        <div className="homeCompaniesContainer">
+          {popularCompanies.map((popularCompany) => (
+            <CompaniesCard key={popularCompany.id} company={popularCompany} />
           ))}
         </div>
       </div>

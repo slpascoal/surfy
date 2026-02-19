@@ -3,7 +3,7 @@
 @import "shadcn/tailwind.css";
 
 .companiesCard {
-    @apply min-w-[167px] rounded-2xl border border-0 bg-zinc-900;
+    @apply min-w-41.75 rounded-2xl border-0 bg-zinc-900;
 }
 
 .companiesCardContent {
@@ -11,7 +11,7 @@
 }
 
 .companiesCardImage {
-    @apply relative h-[159px] w-full;
+    @apply relative h-39.75 w-full;
 
     .companiesCardImg {
         @apply rounded-2xl object-cover;
