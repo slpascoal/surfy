@@ -1,0 +1,73 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+.homeWelcome {
+  @apply p-5;
+
+  h2 {
+    @apply text-xl font-bold;
+  }
+}
+
+.homeSearch {
+  @apply mt-6 flex items-center gap-2;
+
+  Input {
+    @apply border-zinc-700 bg-zinc-900;
+
+    border-radius: 8px;
+  }
+
+  Button {
+    @apply bg-cyan-600 text-neutral-50;
+
+    border-radius: 8px;
+  }
+}
+
+.homeBanner {
+  @apply relative mt-6 h-37.5 w-full;
+
+  .homeBannerImage {
+    @apply object-cover rounded-xl;
+  }
+}
+
+.homeAgendamentos {
+  @apply mt-6 bg-zinc-900 p-2 border-neutral-700;
+
+  border-radius: 8px;
+
+  .agendamentosContent {
+    @apply flex justify-between;
+
+    .agendamentosDetails {
+      @apply flex flex-col gap-2 p-2;
+
+      Badge {
+        @apply bg-cyan-600 text-neutral-50;
+      }
+
+      h3 {
+        @apply font-semibold;
+      }
+
+      .agendamentosCompany {
+        @apply flex flex-row items-center gap-2;
+
+        Avatar {
+          @apply h-6 w-6;
+        }
+
+        p {
+          @apply text-sm;
+        }
+      }
+    }
+
+    .agendamentosDate {
+      @apply flex flex-col items-center justify-center border-l border-solid border-neutral-700 pr-2 pl-4;
+    }
+  }
+}

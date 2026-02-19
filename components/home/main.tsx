@@ -4,6 +4,8 @@ import { SearchIcon } from "lucide-react";
 import { Card, CardContent } from "../ui/card";
 import { Badge } from "../ui/badge";
 import { Avatar, AvatarImage } from "../ui/avatar";
+import "../../styles/home.css";
+import Image from "next/image";
 
 export default function Main() {
   return (
@@ -17,6 +19,15 @@ export default function Main() {
           <Button>
             <SearchIcon />
           </Button>
+        </div>
+
+        <div className="homeBanner">
+          <Image 
+            alt="Agende nos melhores"
+            src="/images/bannerPizza.png"
+            fill
+            className="homeBannerImage"
+          />
         </div>
 
         <Card className="homeAgendamentos">

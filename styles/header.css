@@ -1,0 +1,15 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+.logo {
+  @apply text-2xl font-bold;
+}
+
+.headerCard {
+    @apply border-0;
+
+    .headerContent {
+        @apply flex flex-row items-center justify-between bg-zinc-900 p-5;
+    }
+}

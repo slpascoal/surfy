@@ -1,11 +1,12 @@
 import { MenuIcon } from "lucide-react";
 import { Button } from "./ui/button";
 import { Card, CardContent } from "./ui/card";
+import "../styles/header.css";
 
 export default function Header() {
   return (
     <header>
-        <Card>
+        <Card className="headerCard">
             <CardContent className="headerContent">
                 <span className="logo">Surfy</span>
                 <Button size="icon" variant="ghost">
