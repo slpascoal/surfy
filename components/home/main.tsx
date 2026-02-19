@@ -29,7 +29,8 @@ export default function Main() {
             className="homeBannerImage"
           />
         </div>
-
+          
+        <h3 className="homeSubTitles">Agendamentos</h3>
         <Card className="homeAgendamentos">
           <CardContent className="agendamentosContent">
             <div className="agendamentosDetails">
@@ -51,6 +52,11 @@ export default function Main() {
             </div>
           </CardContent>
         </Card>
+
+        <h3 className="homeSubTitles">Recomendados</h3>
+        <div>
+
+        </div>
       </div>
     </main>
   );
