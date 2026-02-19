@@ -21,6 +21,7 @@ model customers {
   updatedAt DateTime  @updatedAt
 
   bookings bookings[]
+  ratings  ratings[]
 }
 
 model companies {
@@ -34,6 +35,7 @@ model companies {
   updatedAt   DateTime @updatedAt
 
   companyServices company_services[]
+  ratings         ratings[]
 }
 
 model company_services {
@@ -61,4 +63,16 @@ model bookings {
 
   customers       customers @relation(fields: [customerId], references: [id])
   companyServices company_services @relation(fields: [companyServiceId], references: [id])
+}
+
+model ratings {
+  id               String   @id @default(uuid())
+  customerId       String
+  companyId        String
+  rating           Int
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  customers       customers @relation(fields: [customerId], references: [id])
+  companies       companies @relation(fields: [companyId], references: [id])
 }

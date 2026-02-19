@@ -1,13 +1,17 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { SearchIcon } from "lucide-react";
-import { Card, CardContent } from "../ui/card";
-import { Badge } from "../ui/badge";
-import { Avatar, AvatarImage } from "../ui/avatar";
-import "../../styles/home.css";
+import { Card, CardContent } from "./ui/card";
+import { Badge } from "./ui/badge";
+import { Avatar, AvatarImage } from "./ui/avatar";
+import "../styles/home.css";
 import Image from "next/image";
+import { prisma } from "@/lib/prisma";
+import CompaniesCard from "./companiesCard";
 
-export default function Main() {
+export default async function Main() {
+  const companies = await prisma.companies.findMany({});
+
   return (
     <main>
       <div className="homeWelcome">
@@ -27,6 +31,7 @@ export default function Main() {
             src="/bannerPizza.png"
             fill
             className="homeBannerImage"
+            loading="eager"
           />
         </div>
           
@@ -54,8 +59,10 @@ export default function Main() {
         </Card>
 
         <h3 className="homeSubTitles">Recomendados</h3>
-        <div>
-
+        <div className="homeCompaniesContainer">
+          {companies.map((company) => (
+            <CompaniesCard key={company.id} company={company} />
+          ))}
         </div>
       </div>
     </main>

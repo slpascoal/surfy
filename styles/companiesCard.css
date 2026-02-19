@@ -1,0 +1,47 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+.companiesCard {
+    @apply min-w-[167px] rounded-2xl border border-0 bg-zinc-900;
+}
+
+.companiesCardContent {
+    @apply p-0 px-1 pt-1;
+}
+
+.companiesCardImage {
+    @apply relative h-[159px] w-full;
+
+    .companiesCardImg {
+        @apply rounded-2xl object-cover;
+    }
+
+    .companiesCardBadge {
+        @apply absolute top-2 left-2 bg-cyan-600 text-neutral-50 space-x-1;
+
+        .companiesCardStarIcon {
+            @apply fill-neutral-50 text-neutral-50;
+        }
+
+        p {
+            @apply text-xs font-semibold;
+        }
+    }
+}
+
+.companiesCardDetails {
+    @apply py-3 px-1;
+
+    h3 {
+        @apply font-semibold truncate;
+    }
+
+    p {
+        @apply text-sm text-neutral-400 truncate;
+    }
+
+    Button {
+        @apply w-full mt-3 bg-neutral-700 text-neutral-50;
+    }
+}

@@ -75,3 +75,7 @@
     }
   }
 }
+
+.homeCompaniesContainer {
+  @apply flex gap-4 overflow-auto [&::-webkit-scrollbar]:hidden;
+}
