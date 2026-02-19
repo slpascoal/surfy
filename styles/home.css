@@ -14,7 +14,7 @@
   @apply mt-6 flex items-center gap-2;
 
   Input {
-    @apply border-zinc-700 bg-zinc-900;
+    @apply border-neutral-800 bg-zinc-900;
 
     border-radius: 8px;
   }
@@ -35,7 +35,7 @@
 }
 
 .homeAgendamentos {
-  @apply mt-6 bg-zinc-900 p-2 border-neutral-700;
+  @apply mt-6 bg-zinc-900 p-2 border-neutral-800;
 
   border-radius: 8px;
 
@@ -67,7 +67,7 @@
     }
 
     .agendamentosDate {
-      @apply flex flex-col items-center justify-center border-l border-solid border-neutral-700 pr-2 pl-4;
+      @apply flex flex-col items-center justify-center border-l border-solid border-neutral-800 pr-2 pl-4;
     }
   }
 }

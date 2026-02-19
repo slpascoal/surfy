@@ -24,7 +24,7 @@ export default function Main() {
         <div className="homeBanner">
           <Image 
             alt="Agende nos melhores"
-            src="/images/bannerPizza.png"
+            src="/bannerPizza.png"
             fill
             className="homeBannerImage"
           />
