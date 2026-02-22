@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { SearchIcon } from "lucide-react";
+import { Scissors, SearchIcon } from "lucide-react";
 import { Card, CardContent } from "./ui/card";
 import { Badge } from "./ui/badge";
 import { Avatar, AvatarImage } from "./ui/avatar";
@@ -28,6 +28,53 @@ export default async function Main() {
           <Input placeholder="Buscar..."/>
           <Button>
             <SearchIcon />
+          </Button>
+        </div>
+
+        <div className="buscaRapida">
+          <Button className="buscaRapidaButton">
+            <Scissors />
+            Cabelo
+          </Button>
+
+          <Button className="buscaRapidaButton">
+            <Image
+              src="/barba.svg"
+              alt="Barba"
+              width={16}
+              height={16}
+            />
+            Barba
+          </Button>
+
+          <Button className="buscaRapidaButton">
+            <Image
+              src="/acabamento.svg"
+              alt="Acabamento"
+              width={16}
+              height={16}
+            />
+            Acabamento
+          </Button>
+
+          <Button className="buscaRapidaButton">
+            <Image
+              src="/hidratacao.svg"
+              alt="Hidratação"
+              width={16}
+              height={16}
+            />
+            Hidratação
+          </Button>
+
+          <Button className="buscaRapidaButton">
+            <Image
+              src="/sobrancelha.svg"
+              alt="Sobrancelha"
+              width={16}
+              height={16}
+            />
+            Sobrancelha
           </Button>
         </div>
 

@@ -26,6 +26,14 @@
   }
 }
 
+.buscaRapida {
+  @apply mt-6 flex gap-3 overflow-x-scroll [&::-webkit-scrollbar]:hidden;
+
+  .buscaRapidaButton {
+    @apply bg-neutral-900 text-neutral-50 gap-2;
+  }
+}
+
 .homeBanner {
   @apply relative mt-6 h-37.5 w-full;
 
