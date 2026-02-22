@@ -1,23 +1,23 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Scissors, SearchIcon } from "lucide-react";
-import { Card, CardContent } from "./ui/card";
-import { Badge } from "./ui/badge";
-import { Avatar, AvatarImage } from "./ui/avatar";
-import "../styles/home.css";
+import { SearchIcon } from "lucide-react";
+import "../app/_styles/home.css";
 import Image from "next/image";
 import { prisma } from "@/lib/prisma";
 import CompaniesCard from "./companiesCard";
+import { quickSearchOptions } from "@/app/_constants/quickSearch";
+import BookingCard from "./bookingCard";
+import BannerItem from "./bannerItem";
+
+const companies = await prisma.companies.findMany({});
+const popularCompanies = await prisma.companies.findMany({
+  orderBy: {
+    name: "desc",
+  },
+  take: 5,
+});
 
 export default async function Main() {
-  const companies = await prisma.companies.findMany({});
-  const popularCompanies = await prisma.companies.findMany({
-    orderBy: {
-      name: "desc",
-    },
-    take: 5,
-  });
-
   return (
     <main>
       <div className="homeWelcome">
@@ -32,84 +32,25 @@ export default async function Main() {
         </div>
 
         <div className="buscaRapida">
-          <Button className="buscaRapidaButton">
-            <Scissors />
-            Cabelo
-          </Button>
-
-          <Button className="buscaRapidaButton">
-            <Image
-              src="/barba.svg"
-              alt="Barba"
-              width={16}
-              height={16}
-            />
-            Barba
-          </Button>
-
-          <Button className="buscaRapidaButton">
-            <Image
-              src="/acabamento.svg"
-              alt="Acabamento"
-              width={16}
-              height={16}
-            />
-            Acabamento
-          </Button>
-
-          <Button className="buscaRapidaButton">
-            <Image
-              src="/hidratacao.svg"
-              alt="Hidratação"
-              width={16}
-              height={16}
-            />
-            Hidratação
-          </Button>
-
-          <Button className="buscaRapidaButton">
-            <Image
-              src="/sobrancelha.svg"
-              alt="Sobrancelha"
-              width={16}
-              height={16}
-            />
-            Sobrancelha
-          </Button>
+          {quickSearchOptions .map((option) => (
+            <Button key={option.title} className="buscaRapidaButton">
+              <Image
+                src={option.imageUrl}
+                alt={option.title}
+                width={16}
+                height={16}
+              />
+              {option.title}
+            </Button>
+          ))}
         </div>
 
         <div className="homeBanner">
-          <Image 
-            alt="Agende nos melhores"
-            src="/bannerPizza.png"
-            fill
-            className="homeBannerImage"
-            loading="eager"
-          />
+          <BannerItem />
         </div>
           
         <h3 className="homeSubTitles">Agendamentos</h3>
-        <Card className="homeAgendamentos">
-          <CardContent className="agendamentosContent">
-            <div className="agendamentosDetails">
-              <Badge>Confirmado</Badge>
-              <h3>Corte de Cabelo</h3>
-
-              <div className="agendamentosCompany">
-                <Avatar>
-                  <AvatarImage src="https://utfs.io/f/c97a2dc9-cf62-468b-a851-bfd2bdde775f-16p.png"/>
-                </Avatar>
-                <p>Barbearia Teste</p>
-              </div>
-            </div>
-
-            <div className="agendamentosDate">
-              <p className="text-sm">Fevereiro</p>
-              <p className="text-2xl">05</p>
-              <p className="text-sm">16:30</p>
-            </div>
-          </CardContent>
-        </Card>
+        <BookingCard />
 
         <h3 className="homeSubTitles">Recomendados</h3>
         <div className="homeCompaniesContainer">

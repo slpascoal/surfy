@@ -1,6 +1,6 @@
-import { Company } from "@/interfaces/ICompany";
+import { Company } from "@/app/_interfaces/ICompany";
 import { Card, CardContent } from "./ui/card";
-import "../styles/companiesCard.css";
+import "../app/_styles/companiesCard.css";
 import Image from "next/image";
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";

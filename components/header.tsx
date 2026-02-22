@@ -1,7 +1,7 @@
 import { MenuIcon } from "lucide-react";
 import { Button } from "./ui/button";
 import { Card, CardContent } from "./ui/card";
-import "../styles/header.css";
+import "../app/_styles/header.css";
 
 export default function Header() {
   return (
